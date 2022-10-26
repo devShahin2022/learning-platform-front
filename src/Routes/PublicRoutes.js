@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import BlogPage from '../pages/BlogPage/BlogPage';
 import CheckoutPage from '../pages/CheckoutPage/CheckoutPage';
 import ContactPage from '../pages/ContactPage/ContactPage';
+import CourseDetails from '../pages/CourseDetails/CourseDetails';
 import CoursesPage from '../pages/CoursesPage/CoursesPage';
 import ExamPage from '../pages/ExamPage/ExamPage';
 import HomePage from '../pages/HomePage/HomePage';
@@ -45,9 +46,13 @@ export const router = createBrowserRouter([
         path : '/free-exam',
         element : <ExamPage></ExamPage>
     },
+    // {
+    //     path : '/checkout',
+    //     element : <PrivateRoutes><CheckoutPage></CheckoutPage></PrivateRoutes>
+    // },
     {
-        path : '/checkout',
-        element : <PrivateRoutes><CheckoutPage></CheckoutPage></PrivateRoutes>
+        path : '/checkout/:id',
+        element : <CheckoutPage></CheckoutPage>
     },
     {
         path : '/profile',
@@ -56,6 +61,11 @@ export const router = createBrowserRouter([
     {
         path : '/terms-and-condition',
         element : <h1>Terms and condition page</h1>
+    },
+    {
+        path : '/courses/:id',
+        // loader: async(params) => fetch(`courseFakeData.json/${params.id}`),
+        element : <CourseDetails></CourseDetails>
     },
     {
         path : '*',

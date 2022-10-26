@@ -2,21 +2,21 @@ import React from 'react';
 import ContactUs from '../../components/ContactUs/ContactUs';
 import Footer from '../../components/Footer/Footer';
 import Navabar from '../../components/Navabar/Navabar';
-import CourseBanner from './components/CourseBanner/CourseBanner';
-import CourseBody from './components/CourseBody/CourseBody';
-import CourseCounter from './components/CourseCounter/CourseCounter';
+import CourseBanner from '../CoursesPage/components/CourseBanner/CourseBanner';
+import IndetailsCourse from './components/IndetailsCourse/IndetailsCourse';
 
-const CoursesPage = () => {
+const CourseDetails = () => {
     return (
         <>
             <Navabar></Navabar>
             <CourseBanner></CourseBanner>
-            <CourseCounter></CourseCounter>
-            <CourseBody></CourseBody>
+            <IndetailsCourse></IndetailsCourse>
             <ContactUs></ContactUs>
             <Footer></Footer>
         </>
     );
 };
 
-export default CoursesPage;
+
+
+export default CourseDetails;
