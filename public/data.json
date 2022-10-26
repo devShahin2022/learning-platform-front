@@ -1,0 +1,32 @@
+[
+    {
+        "mcq" : "What is your name",
+        "options" : [
+            "Shahin Alam",
+            "Kawser Ahmed",
+            "Nayem Hasan",
+            "Mostofa"
+        ],
+        "answer" : "Mostofa"
+    },
+    {
+        "mcq" : "How about your situation",
+        "options" : [
+            "Normal",
+            "Hard",
+            "Khushdil",
+            "Paramoy"
+        ],
+        "answer" : "Hard"
+    },
+    {
+        "mcq" : "What's your father name",
+        "options" : [
+            "Rofiq",
+            "Arshad",
+            "Muslim",
+            "Nayok"
+        ],
+        "answer" : "Rofiq"
+    }
+]

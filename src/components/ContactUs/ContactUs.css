@@ -1,0 +1,8 @@
+.contactus-bg{
+    background-image:url('https://www.infoplease.com/sites/infoplease.com/files/inline-images/NYC%20Skyline.jpg');
+    padding: 2rem 0rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,0 +1,33 @@
+.navBar-bg{
+    background-color: #b13135;
+}
+.nav-right-item{
+    background-color: #fff;
+}
+.vertical-bar{
+    display: block;
+    width: 2px;
+    height: 1rem;
+    background-color:  #AE2A2F;
+}
+.navBar-bg a{
+    color:#fff !important;
+    border-radius: 1rem;
+    transition: all .2s ease-in;
+}
+.nav-right-item a{
+    color: #AE2A2F !important;
+}
+.nav-items a:hover{
+    background-color: rgb(209, 209, 209);
+    border-radius: 1rem;
+    color:#AE2A2F !important;
+}
+.nav-items a:hover{
+    color: #AE2A2F !important;
+    border-radius: .3rem;
+}
+.bg-dark-toogler{
+    background-color: rgba(255, 255, 255, 0.363);
+    border-radius: 1rem;
+}
