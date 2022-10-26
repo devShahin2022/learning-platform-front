@@ -53,6 +53,10 @@ export const router = createBrowserRouter([
         element : <ProfilePage></ProfilePage>
     },
     {
+        path : '/terms-and-condition',
+        element : <h1>Terms and condition page</h1>
+    },
+    {
         path : '*',
         element : <h1>404 page not found!</h1>
     }
