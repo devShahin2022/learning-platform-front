@@ -3,7 +3,7 @@ import './DefaultBanner.css';
 
 const DefaultBanner = () => {
     return (
-        <section className='default-m-top'>
+        <section className='mt-10-custom-special'>
             
         </section>
     );

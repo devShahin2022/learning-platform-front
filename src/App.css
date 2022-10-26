@@ -1,3 +1,15 @@
 .mt-custom-10{
   margin-top: -10% !important;
 }
+.mt-10-custom-special{
+  background-color: #AE2A2F;
+  height:40rem;
+  width:100%;
+  padding-top: 10%;
+}
+.mt-5-parcent{
+  margin-top:-5% !important;
+}
+.font-size-card-i{
+  font-size: .8rem;
+}
