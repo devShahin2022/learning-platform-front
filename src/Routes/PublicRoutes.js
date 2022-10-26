@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
     },
     {
         path : '/courses',
+        loader: async() => fetch('courseFakeData.json'),
         element : <CoursesPage></CoursesPage>
     },
     {
