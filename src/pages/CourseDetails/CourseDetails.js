@@ -9,7 +9,7 @@ const CourseDetails = () => {
     return (
         <>
             <Navabar></Navabar>
-            <CourseBanner></CourseBanner>
+            <CourseBanner data={"Details about your course"}></CourseBanner>
             <IndetailsCourse></IndetailsCourse>
             <ContactUs></ContactUs>
             <Footer></Footer>

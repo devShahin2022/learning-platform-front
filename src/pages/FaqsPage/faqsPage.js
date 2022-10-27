@@ -1,22 +1,20 @@
 import React from 'react';
-import CheckoutForm from '../../components/CheckoutForm/CheckoutForm';
 import ContactUs from '../../components/ContactUs/ContactUs';
 import DefaultBanner from '../../components/Default-banner/DefaultBanner';
 import Footer from '../../components/Footer/Footer';
 import Navabar from '../../components/Navabar/Navabar';
-import './CheckoutPage.css';
+import Faqs from '../HomePage/components/Faqs/Faqs';
 
-const CheckoutPage = () => {
+const FaqsPage = () => {
     return (
-        <>
+        <>  
             <Navabar></Navabar>
-            <DefaultBanner data={"Carefully checkout"}></DefaultBanner>
-            <CheckoutForm></CheckoutForm>
+            <DefaultBanner data={"Read faqs"}></DefaultBanner>
+            <Faqs></Faqs>
             <ContactUs></ContactUs>
-            <Footer></Footer>
+            <Footer></Footer>   
         </>
     );
 };
 
-
-export default CheckoutPage;
+export default FaqsPage;

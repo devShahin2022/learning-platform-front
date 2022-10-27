@@ -23,14 +23,14 @@ const CheckoutForm = () => {
              <Container className='bg-white rounded-3 py-4 px-2 margin-top-10'>
             <div className='row'>
                 <div className='col-md-6'>
-                    <h2 className='alert alert-danger my-3'>Your choosen online course</h2>
+                    <h2 className='alert alert-danger my-3'>Your choosen online course - Checkout now</h2>
                     <img src='' alt='' />
                     <div className='row mb-3'>
                         <div className='col-md-8'>
                             <h4>{loderData.courseName}</h4>
                         </div>
                         <div className='col-md-4 d-flex justify-content-end'>
-                            <h3><del>{loderData.courseFee}</del>-{loderData.discount}% {loderData.courseFee - parseInt((loderData.discount/100)*loderData.courseFee)} {loderData.currency}</h3>
+                            <h5><del>{loderData.courseFee}</del>-{loderData.discount}% {loderData.courseFee - parseInt((loderData.discount/100)*loderData.courseFee)} {loderData.currency}</h5>
                         </div>
                     </div>
                     <img className='w-100 h-auto mb-4' src={loderData.thumbnail} alt="" />

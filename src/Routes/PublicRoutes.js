@@ -6,6 +6,7 @@ import ContactPage from '../pages/ContactPage/ContactPage';
 import CourseDetails from '../pages/CourseDetails/CourseDetails';
 import CoursesPage from '../pages/CoursesPage/CoursesPage';
 import ExamPage from '../pages/ExamPage/ExamPage';
+import FaqsPage from '../pages/FaqsPage/faqsPage';
 import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
     {
         path : '/blog',
         element : <BlogPage></BlogPage>
+    },
+    {
+        path : '/faqs',
+        element : <FaqsPage></FaqsPage>
     },
     {
         path : '/login',

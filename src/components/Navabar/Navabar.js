@@ -22,6 +22,11 @@ const Navabar = () => {
             path : "/blog",
         },
         {
+            id : 2,
+            name : "Faqs",
+            path : "/faqs",
+        },
+        {
             id : 3,
             name : "Contact",
             path : "/contact",

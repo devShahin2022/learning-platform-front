@@ -1,18 +1,17 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 import ContactUs from '../../components/ContactUs/ContactUs';
 import Footer from '../../components/Footer/Footer';
 import Navabar from '../../components/Navabar/Navabar';
 import CourseBanner from './components/CourseBanner/CourseBanner';
 import CourseBody from './components/CourseBody/CourseBody';
-import CourseCounter from './components/CourseCounter/CourseCounter';
+// import CourseCounter from './components/CourseCounter/CourseCounter';
 
 const CoursesPage = () => {
     return (
         <>
             <Navabar></Navabar>
-            <CourseBanner></CourseBanner>
-            <CourseCounter></CourseCounter>
+            <CourseBanner data={"Explore our best courses"}></CourseBanner>
+            {/* <CourseCounter></CourseCounter> */}
             <CourseBody></CourseBody>
             <ContactUs></ContactUs>
             <Footer></Footer>
