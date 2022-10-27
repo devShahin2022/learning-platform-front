@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
     },
     {
         path : '/courses',
-        loader: async() => fetch('courseFakeData.json'),
+        loader: async() => fetch('https://servefron-github-ass-10.vercel.app/all-course'),
         element : <CoursesPage></CoursesPage>
     },
     {
@@ -51,10 +51,6 @@ export const router = createBrowserRouter([
     //     element : <PrivateRoutes><CheckoutPage></CheckoutPage></PrivateRoutes>
     // },
     {
-        path : '/checkout/:id',
-        element : <CheckoutPage></CheckoutPage>
-    },
-    {
         path : '/profile',
         element : <ProfilePage></ProfilePage>
     },
@@ -64,8 +60,13 @@ export const router = createBrowserRouter([
     },
     {
         path : '/courses/:id',
-        // loader: async(params) => fetch(`courseFakeData.json/${params.id}`),
+        loader: async({params}) => fetch(`https://servefron-github-ass-10.vercel.app/all-course/${params.id}`),
         element : <CourseDetails></CourseDetails>
+    },
+    {
+        path : '/courses/:id/checkout',
+        loader: async({params}) => fetch(`https://servefron-github-ass-10.vercel.app/all-course/${params.id}`),
+        element : <CheckoutPage></CheckoutPage>
     },
     {
         path : '*',

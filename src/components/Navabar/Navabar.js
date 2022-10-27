@@ -63,8 +63,6 @@ const Navabar = () => {
 
 
 const NavOtems = ({items}) => {
-
-    console.log(items);
     return (
         <>
             <Link className='nav-link' to={items.path}>

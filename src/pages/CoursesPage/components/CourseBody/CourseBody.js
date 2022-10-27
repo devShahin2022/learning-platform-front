@@ -7,7 +7,7 @@ import Slider from "react-slick";
 
 const CourseBody = () => {
     const loaderCourseData = useLoaderData();
-    console.log(loaderCourseData);
+    // console.log(loaderCourseData);
     const settings = {
         dots: true,
         infinite: true,

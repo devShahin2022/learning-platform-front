@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import ContactUs from '../../components/ContactUs/ContactUs';
 import Footer from '../../components/Footer/Footer';
 import Navabar from '../../components/Navabar/Navabar';
