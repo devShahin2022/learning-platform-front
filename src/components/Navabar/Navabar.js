@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsFillSunFill,BsFillMoonStarsFill } from "react-icons/bs";
 import './Navabar.css';
+import logo from "../../logo.png";
 
 const Navabar = () => {
     const navItems = [
@@ -35,7 +36,7 @@ const Navabar = () => {
     return (
         <Navbar collapseOnSelect expand="md" className="navBar-bg position-absolute w-100 t-0 s-0">
         <Container>
-          <Link className="brand" href="#home">Online-Tutor</Link>
+          <Link className="text-decoration-none" to="/"><img src={logo} alt="" /> Online-Tutor</Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className='nav-items'>
             <Nav className="ms-auto">
