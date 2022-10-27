@@ -2,13 +2,17 @@ import { Container } from 'react-bootstrap';
 import './IndetailsCourse.css';
 import { BsArrowBarDown ,BsArrowRightShort,BsFillBookmarkCheckFill } from "react-icons/bs";
 import { Link, useLoaderData } from 'react-router-dom';
+import ReactToPrint from 'react-to-print';
+import { useRef } from 'react';
 
 const IndetailsCourse = () => {
+    const ref = useRef();
     const loderData = useLoaderData();
     console.log("fetch single data", loderData);
     if(loderData.length === 0){
         return <h1 className='bg-danger my-5'> No data found!!!</h1>
     }
+
     return (
         <Container id="mt-10-parcent" className='rounded-3 bg-white mt-10'>
             <div className='rounded-3 d-flex justify-content-between my-3 sticky-top bg-light p-2'>
@@ -16,9 +20,10 @@ const IndetailsCourse = () => {
                 <div className='d-flex justify-content-end'>
                     <small className='mt-3 me-2'>{loderData.courseFee - parseInt((loderData.discount/100)*loderData.courseFee)} {loderData.currency}</small>
                     <Link to={`/courses/${loderData.id}/checkout`}><button className='btn btn-danger'>Buy now <BsArrowRightShort className='ms-2 fs-3 text-white'></BsArrowRightShort></button></Link>
-                    <button title="Download pdf file" className='btn btn-sm'><BsArrowBarDown className='fs-3 text-danger'></BsArrowBarDown></button>
+                    <ReactToPrint trigger={() => <button title="Download pdf file" className='btn btn-sm'><BsArrowBarDown className='fs-3 text-danger'></BsArrowBarDown></button> } content={() => ref.current}></ReactToPrint>
                 </div>
             </div>
+        <div ref={ref}>
             <img className='w-100 h-auto mb-4' src={loderData.thumbnail} alt="" />
                 <div className='row'>
                     <div className='col-9'>
@@ -49,7 +54,7 @@ const IndetailsCourse = () => {
                     {
                         loderData.courseFacility.map((item , indx) => <CourseFeature key={indx} item={item}></CourseFeature> )
                     }
-                
+                </div>
                 <Link to={`/courses/${loderData.id}/checkout`}><button className='btn btn-danger mb-5 mt-4'>Buy now <BsArrowRightShort className='ms-2 fs-3 text-white'></BsArrowRightShort></button></Link>
                 
         </Container>
