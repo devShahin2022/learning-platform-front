@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsFillSunFill,BsFillMoonStarsFill } from "react-icons/bs";
 import './Navabar.css';
 import logo from "../../logo.png";
+import { AuthContextInfo } from '../../Context/AuthContext';
 
 const Navabar = () => {
+    const { user, logOut } = useContext(AuthContextInfo);
     const navItems = [
         {
             id : 0,
@@ -33,6 +35,9 @@ const Navabar = () => {
             path : "/contact",
         },
     ];
+    const logout = ()=> {
+        logOut();
+    }
     return (
         <Navbar collapseOnSelect expand="md" className="navBar-bg position-absolute w-100 t-0 s-0">
         <Container>
@@ -52,13 +57,22 @@ const Navabar = () => {
                     </button>
                 </div>
                 <div class='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
-                    <Link className='nav-link' to="/login">
-                        Login
-                    </Link>
-                    <span className='vertical-bar'></span>
-                    <Link className='nav-link' to="/register">
-                        Register
-                    </Link>
+                    {
+                        user ? <>
+                            <div><img title={user.displayName} style={{"width":"20px","height":"auto"}} className='rounded' src={user.photoURL || ''} alt="" /></div>
+                            <button onClick={logout} className='btn btn-sm'>Logout</button>
+                        </>
+                        :
+                        <>
+                            <Link className='nav-link' to="/login">
+                                Login
+                            </Link>
+                            <span className='vertical-bar'></span>
+                            <Link className='nav-link' to="/register">
+                                Register
+                            </Link>
+                        </>
+                    }
                 </div>
             </Nav>
           </Navbar.Collapse>

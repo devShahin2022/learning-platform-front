@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
     {
         path : '/courses/:id/checkout',
         loader: async({params}) => fetch(`https://servefron-github-ass-10.vercel.app/all-course/${params.id}`),
-        element : <CheckoutPage></CheckoutPage>
+        element : <PrivateRoutes><CheckoutPage></CheckoutPage></PrivateRoutes>
     },
     {
         path : '*',
