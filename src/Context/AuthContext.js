@@ -10,6 +10,7 @@ const AuthContext = ({children}) => {
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
 
+
     const providerLogin = (provider) =>{
         return signInWithPopup(auth,provider);
     }
@@ -45,7 +46,7 @@ const logOut = () => {
         return () => {
             unsubscribe();
         } 
-        
+
     },[]);
 
 

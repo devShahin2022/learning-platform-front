@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { BsFillSunFill,BsFillMoonStarsFill } from "react-icons/bs";
@@ -7,6 +7,7 @@ import logo from "../../logo.png";
 import { AuthContextInfo } from '../../Context/AuthContext';
 
 const Navabar = () => {
+    const [mode, setMode] = useState(true);
     const { user, logOut } = useContext(AuthContextInfo);
     const navigate = useNavigate();
     const navItems = [
@@ -40,6 +41,11 @@ const Navabar = () => {
         logOut();
         navigate('/');
     }
+
+    const toggleMode = () => {
+        setMode(!mode);
+    }
+
     return (
         <Navbar collapseOnSelect expand="md" className="navBar-bg position-absolute w-100 t-0 s-0">
         <Container>
@@ -50,14 +56,21 @@ const Navabar = () => {
                 {
                     navItems.map((items) => <NavOtems key={items.id} items={items}></NavOtems>)
                 }
-                <div className='bg-dark-toogler ms-2'>
-                    <button title='Light theme' className='btn btn-sm text-danger bg-light'>
-                        <BsFillSunFill></BsFillSunFill>
-                    </button>
-                    <button title='dark theme' className='btn text-white'>
-                        <BsFillMoonStarsFill></BsFillMoonStarsFill>
-                    </button>
-                </div>
+                {
+                    mode ? <div style={{"width":"30px"}} className=' ms-2'>
+                        <button onClick={toggleMode} title='Switch dark theme' className='me-1 btn btn-sm text-danger bg-light'>
+                            <BsFillSunFill></BsFillSunFill>
+                        </button>
+                    </div>
+                    :
+                    <div className=' ms-2'>
+                        <button  style={{"width":"30px"}}  onClick={toggleMode} title='Switch light theme' className='btn btn-sm bg-dark text-white'>
+                            <BsFillMoonStarsFill></BsFillMoonStarsFill>
+                        </button>
+                    </div>
+
+                }
+
                 <div style={{"width":"130px"}} class='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
                     {
                         user ? <>
