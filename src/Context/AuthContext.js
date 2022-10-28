@@ -35,7 +35,6 @@ const signIn = (email,password) => {
     setLoading(true);
     return signInWithEmailAndPassword( auth,email,password);
 }
-
 // logout
 
 const logOut = () => {
