@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsFillSunFill,BsFillMoonStarsFill } from "react-icons/bs";
 import './Navabar.css';
 import logo from "../../logo.png";
@@ -8,6 +8,7 @@ import { AuthContextInfo } from '../../Context/AuthContext';
 
 const Navabar = () => {
     const { user, logOut } = useContext(AuthContextInfo);
+    const navigate = useNavigate();
     const navItems = [
         {
             id : 0,
@@ -37,6 +38,7 @@ const Navabar = () => {
     ];
     const logout = ()=> {
         logOut();
+        navigate('/');
     }
     return (
         <Navbar collapseOnSelect expand="md" className="navBar-bg position-absolute w-100 t-0 s-0">
@@ -56,10 +58,10 @@ const Navabar = () => {
                         <BsFillMoonStarsFill></BsFillMoonStarsFill>
                     </button>
                 </div>
-                <div class='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
+                <div style={{"width":"130px"}} class='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
                     {
                         user ? <>
-                            <div><img title={user.displayName} style={{"width":"20px","height":"auto"}} className='rounded' src={user.photoURL || ''} alt="" /></div>
+                            <div title={user.displayName}  id='avatar'><img  style={{"width":"100%","height":"auto"}} className='rounded-circle' src={user.photoURL} alt="" /></div>
                             <button onClick={logout} className='btn btn-sm'>Logout</button>
                         </>
                         :

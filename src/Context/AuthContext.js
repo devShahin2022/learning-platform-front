@@ -31,6 +31,7 @@ const signIn = (email,password) => {
 
 const logOut = () => {
     setLoading(true);
+    setUser(null);
     return signOut(auth);
 }
 
@@ -41,14 +42,16 @@ const logOut = () => {
             setLoading(false);
         });
 
-        return unsubscribe();
+        return () => {
+            unsubscribe();
+        } 
+        
     },[]);
 
 
 
 
     const authInfo = {loading, user, providerLogin, createUser, signIn ,logOut };
-
     return (
         <AuthContextInfo.Provider value={authInfo}>
             {children}
