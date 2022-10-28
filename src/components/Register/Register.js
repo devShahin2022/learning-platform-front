@@ -16,7 +16,7 @@ const Register = () => {
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
-    const handleGoogleLogin = () => {
+    const handleGoogleLogin1 = () => {
         providerLogin(googleProvider)
         .then(result => {
             toastMessage("success");
@@ -30,7 +30,7 @@ const Register = () => {
 
     // handle github login
 
-    const handleGithubLogin = () => {
+    const handleGithubLogin1 = () => {
         providerLogin(githubProvider)
         .then(result => {
             toastMessage("success");
@@ -41,28 +41,6 @@ const Register = () => {
             toastMessage("error");
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -156,7 +134,6 @@ const toastMessage = (status) => {
       }
 }
 
-
     return (
             <Container className='mt-custom-10 bg-white shadow-lg rounded-3 py-4 px-2 mb-5'>
                 <div className='row'>
@@ -199,8 +176,8 @@ const toastMessage = (status) => {
                     </div>
                     <div className='col-md-4'>
                         <div className='d-flex align-items-center justify-content-center flex-column h-100'>
-                            <button onClick={handleGoogleLogin} className='btn btn-primary w-100 my-2'>Login with Google</button>
-                            <button onClick={handleGithubLogin} className='btn btn-dark w-100 my-2'>Login with Github</button>
+                            <button onClick={handleGoogleLogin1} className='btn btn-primary w-100 my-2'>Login with Google</button>
+                            <button onClick={handleGithubLogin1} className='btn btn-dark w-100 my-2'>Login with Github</button>
                         </div>
                     </div>
                 </div>
