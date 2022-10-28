@@ -10,7 +10,7 @@ const CheckoutPage = () => {
     return (
         <>
             <Navabar></Navabar>
-            <DefaultBanner data={"Carefully checkout"}></DefaultBanner>
+            <DefaultBanner></DefaultBanner>
             <CheckoutForm></CheckoutForm>
             <ContactUs></ContactUs>
             <Footer></Footer>
