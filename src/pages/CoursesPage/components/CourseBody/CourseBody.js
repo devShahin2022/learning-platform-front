@@ -7,7 +7,7 @@ import Slider from "react-slick";
 
 const CourseBody = () => {
     const loaderCourseData = useLoaderData();
-    // console.log(loaderCourseData);
+    // //console.log(loaderCourseData);
     const settings = {
         dots: true,
         infinite: true,
@@ -65,7 +65,7 @@ const CourseBody = () => {
 // load card
 const LoadCard = ({item}) =>{
     return (
-        <div class='col-md-6'>
+        <div className='col-md-6'>
             <div className='rounded-3 bg-white my-2 border bordered-1'>
                 <img className='img-fluid w-100' src={item.thumbnail} alt="" />
                 <div className='px-2 py-4'>
@@ -74,7 +74,7 @@ const LoadCard = ({item}) =>{
                     <p className='lead'>Price : <del>{item.courseFee}</del><small> -{item.discount}% </small> <b>{parseInt(item.courseFee - (item.courseFee*(item.discount/100)))} {item.currency}</b></p>
                     <div className='row'>
                         <div className='col-6'>
-                            <Link to={"/courses/"+item.id}><button className='btn btn-danger w-100'>Join Course</button></Link>
+                            <Link to={"/courses/"+item.id}><button className='btn btn-danger w-100'>See course details</button></Link>
                         </div>
                         <div className='col-6 d-flex justify-content-end'>
                             <button className='btn '><BsFillAlarmFill className='text-muted me-2'></BsFillAlarmFill><span className='font-size-card-i'>{item.duration}m</span></button>

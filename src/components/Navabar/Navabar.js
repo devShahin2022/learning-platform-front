@@ -5,6 +5,7 @@ import { BsFillSunFill,BsFillMoonStarsFill } from "react-icons/bs";
 import './Navabar.css';
 import logo from "../../logo.png";
 import { AuthContextInfo } from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const Navabar = () => {
     const [mode, setMode] = useState(true);
@@ -37,8 +38,24 @@ const Navabar = () => {
             path : "/contact",
         },
     ];
+
     const logout = ()=> {
         logOut();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+        Toast.fire({
+                icon: 'success',
+                title: 'Logout success'
+        })
         navigate('/');
     }
 
@@ -71,7 +88,7 @@ const Navabar = () => {
 
                 }
 
-                <div style={{"width":"130px"}} class='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
+                <div id="profile-wrap-id" style={{"width":"130px"}} className='d-flex ms-4 nav-right-item rounded-3 align-items-center'>
                     {
                         user ? <>
                             <div title={user.displayName}  id='avatar'><img  style={{"width":"100%","height":"auto"}} className='rounded-circle' src={user.photoURL} alt="" /></div>

@@ -8,7 +8,7 @@ import { useRef } from 'react';
 const IndetailsCourse = () => {
     const ref = useRef();
     const loderData = useLoaderData();
-    console.log("fetch single data", loderData);
+    //console.log("fetch single data", loderData);
     if(loderData.length === 0){
         return <h1 className='bg-danger my-5'> No data found!!!</h1>
     }

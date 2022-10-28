@@ -9,7 +9,7 @@ const ContactPage = () => {
     return (
         <>
             <Navabar></Navabar>
-            <DefaultBanner></DefaultBanner>
+            <DefaultBanner data="Contact with us"></DefaultBanner>
             <ContactUs></ContactUs>
             <Footer></Footer>
         </>

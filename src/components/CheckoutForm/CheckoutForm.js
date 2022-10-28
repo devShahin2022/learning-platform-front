@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './CheckoutForm.css';
 import Swal from 'sweetalert2';
 import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContextInfo } from '../../Context/AuthContext';
 
 const CheckoutForm = () => {
+    const {user} = useContext(AuthContextInfo);
     const loderData = useLoaderData();
 
     if(loderData.length === 0){
@@ -12,7 +14,7 @@ const CheckoutForm = () => {
     }
     const handleConfirm = () => {
         Swal.fire(
-            'Thank you',
+            `Welcome, ${user.displayName}`,
             'Imidiately we will verify your information and active account',
             'success'
           )
@@ -39,19 +41,19 @@ const CheckoutForm = () => {
                     <div className='row mb-4'>
                         <div className='col-6'>
                             <p  className='lead'>Name :</p>
-                            <input className='form-control' readOnly type="text" value="md shahin alam" />
+                            <input className='form-control' readOnly type="text" value={user.displayName} />
                         </div>
                         <div className='col-6'>
                             <p  className='lead'>Email :</p>
-                            <input className='form-control' readOnly type="text" value="shahinsss1949@gmail.com" />
+                            <input className='form-control' readOnly type="text" value={user.email} />
                         </div>
                     </div>
                     <p  className='lead'>Your payment method name :</p>
-                    <input autoFocus className='form-control mb-3' type="text" />
+                    <input required autoFocus className='form-control mb-3' type="text" />
                     <p  className='lead'>Your payment Phone Number :</p>
-                    <input className='form-control mb-3' type="text" />
+                    <input required className='form-control mb-3' type="text" />
                     <p  className='lead'>Your payment Trnx id :</p>
-                    <input className='form-control mb-3' type="text" />
+                    <input required className='form-control mb-3' type="text" />
                     <button onClick={handleConfirm} className='btn btn-danger w-100 mt-4'>Confirm join</button>
                 </div>
             </div>

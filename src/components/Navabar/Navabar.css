@@ -1,5 +1,6 @@
 .navBar-bg{
     background-color: #b13135;
+    z-index:1000 !important;
 }
 .nav-right-item{
     background-color: #fff;
@@ -38,4 +39,7 @@
     border-radius: 50% !important;
     border:1px solid #AE2A2F !important;
     margin:0 5px !important;
+    overflow: hidden !important;
 }
+
+
